@@ -162,9 +162,9 @@
     <Compile Include="Implements\EmployeeStorage.cs" />
     <Compile Include="Implements\FirmStorage.cs" />
     <Compile Include="Implements\VacancyStorage.cs" />
-    <Compile Include="Migrations\20210416185400_InitialCreate.cs" />
-    <Compile Include="Migrations\20210416185400_InitialCreate.designer.cs">
-      <DependentUpon>20210416185400_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20210509191923_IC.cs" />
+    <Compile Include="Migrations\20210509191923_IC.designer.cs">
+      <DependentUpon>20210509191923_IC.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Models\Applicant.cs" />

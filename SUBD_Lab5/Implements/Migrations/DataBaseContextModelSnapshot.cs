@@ -40,13 +40,15 @@ namespace Implements.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Specialty")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Specialty");
 
                     b.ToTable("Applicants");
                 });
@@ -74,6 +76,8 @@ namespace Implements.Migrations
 
                     b.HasIndex("ApplicantId");
 
+                    b.HasIndex("Date");
+
                     b.HasIndex("EmployeeId");
 
                     b.HasIndex("VacancyId");
@@ -93,7 +97,7 @@ namespace Implements.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Patronymic")
                         .HasColumnType("nvarchar(max)");
@@ -111,6 +115,8 @@ namespace Implements.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name");
+
                     b.ToTable("Employees");
                 });
 
@@ -127,9 +133,11 @@ namespace Implements.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name");
 
                     b.ToTable("Firms");
                 });

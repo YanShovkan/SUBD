@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Implements.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class IC : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -115,9 +115,19 @@ namespace Implements.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Applicants_Specialty",
+                table: "Applicants",
+                column: "Specialty");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Deals_ApplicantId",
                 table: "Deals",
                 column: "ApplicantId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Deals_Date",
+                table: "Deals",
+                column: "Date");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Deals_EmployeeId",
@@ -128,6 +138,16 @@ namespace Implements.Migrations
                 name: "IX_Deals_VacancyId",
                 table: "Deals",
                 column: "VacancyId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Employees_Name",
+                table: "Employees",
+                column: "Name");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Firms_Name",
+                table: "Firms",
+                column: "Name");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vacancyes_FirmId",

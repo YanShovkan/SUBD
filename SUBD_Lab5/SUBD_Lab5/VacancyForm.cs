@@ -50,8 +50,7 @@ namespace SUBD_Lab5
                 return;
             }
             try
-            {
-                VacancyVM currentVacancy = Vlogic.Read(new VacancyBM { Id = id })[0];
+            {              
                 VacancyBM vacancy = new VacancyBM
                 {
                     Id = id,
@@ -61,14 +60,19 @@ namespace SUBD_Lab5
                     FirmId = Convert.ToInt32(comboBoxFirm.SelectedValue),
                 };
 
-                if (currentVacancy != null)
+                if (Vlogic.Read(null).Count != 0)
                 {
-                    vacancy.Employment = currentVacancy.Employment;
+                    VacancyVM currentVacancy = Vlogic.Read(new VacancyBM { Id = id })[0];
+                    if (currentVacancy != null)
+                    {
+                        vacancy.Employment = currentVacancy.Employment;
+                    }
+                    else
+                    {
+                        vacancy.Employment = false;
+                    }
                 }
-                else
-                {
-                    vacancy.Employment = false;
-                }
+              
                 Vlogic.CreateOrUpdate(vacancy);
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
